@@ -44,4 +44,21 @@ public class PileTest extends junit.framework.TestCase {
     public void testEncourageant(){
         assertTrue(true);
     }
+    public void testMonTest()
+    {
+        question1.Pile pile1 = new question1.Pile();
+        
+        try
+        {
+            pile1.empiler(5);
+            pile1.empiler("rim");
+            pile1.empiler(50);
+        }
+        catch (question1.PilePleineException ppe)
+        {
+            System.out.println("La pile " + pile1.toString()+ " est pleine !");
+        }
+        
+        assertEquals("[50, rim, 5]", pile1.toString());
+    }
 }
